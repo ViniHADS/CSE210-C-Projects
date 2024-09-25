@@ -20,7 +20,7 @@ class Program
 
         Console.WriteLine();
 
-        resume myResume = new resume();
+        Resume myResume = new Resume();
         myResume._name = "Vinicius Araujo";
         myResume._jobs.Add(j1);
         myResume._jobs.Add(j2);
