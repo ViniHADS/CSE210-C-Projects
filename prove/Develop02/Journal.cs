@@ -4,17 +4,17 @@ using System.IO;
 
 class Journal
 {
-    // Lista de todas as entradas no Journal
+    // List the options of the journal
     public List<Entry> Entries { get; set; } = new List<Entry>();
 
-    // Adiciona uma nova entrada ao Journal
+    // Add new entry in the journal
     public void AddEntry(Entry newEntry)
     {
         Entries.Add(newEntry);
         Console.WriteLine("Entry added successfully!\n");
     }
 
-    // Exibe todas as entradas
+    // Show all the entries add in the journal
     public void DisplayAll()
     {
         if (Entries.Count == 0)
@@ -30,21 +30,19 @@ class Journal
         }
     }
 
-    // Salva o Journal em um arquivo
+    // Save the journal in archives type .txt and .csv(types I've tried)
    public void SaveToFile(string filename)
 {
-    // Verifica se o nome do arquivo contém um ponto para indicar uma extensão
+    // Verify the name of archieve, if have doesn't put extension .csv in the end, if doesn't he add automatically
     if (!filename.Contains('.'))
     {
-        filename += ".csv"; // Adiciona .csv apenas se não houver um ponto
+        filename += ".csv"; 
     }
 
     using (StreamWriter writer = new StreamWriter(filename))
     {
-        // Escreve a linha de cabeçalho no arquivo CSV
         writer.WriteLine("Date,Prompt,Response");
 
-        // Escreve cada entrada no arquivo
         foreach (var entry in Entries)
         {
             writer.WriteLine($"{entry._date},{entry._promptText},{entry._entryText}");
@@ -53,21 +51,21 @@ class Journal
     Console.WriteLine("Journal saved successfully!\n");
 }
 
-    // Carrega o Journal de um arquivo
+    // Load the journal
     public void LoadFromFile(string filename)
 {
     if (File.Exists(filename))
     {
-        // Não limpar as entradas existentes
+        // Don't clean the entries.
         string[] lines = File.ReadAllLines(filename);
 
-        foreach (var line in lines.Skip(1)) // Skip(1) para pular a linha de cabeçalho
+        foreach (var line in lines.Skip(1)) 
         {
             var parts = line.Split(',');
             if (parts.Length == 3)
             {
                 Entry entry = new Entry(parts[0], parts[1], parts[2]);
-                Entries.Add(entry); // Adiciona novas entradas sem limpar as antigas
+                Entries.Add(entry); // Add new entries without cleaning the old entries
             }
         }
         Console.WriteLine("Journal loaded successfully!\n");

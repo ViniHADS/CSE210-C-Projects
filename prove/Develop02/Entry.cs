@@ -6,7 +6,6 @@ class Entry
     public string _promptText { get; set; }
     public string _entryText { get; set; }
 
-    // Construtor para inicializar uma nova entrada
     public Entry(string date, string promptText, string entryText)
     {
         _date = date;
@@ -14,7 +13,7 @@ class Entry
         _entryText = entryText;
     }
 
-    // Exibe a entrada formatada
+    // Show the entry
     public void Display()
     {
         Console.WriteLine($"{_date} - {_promptText}\nResponse: {_entryText}\n");

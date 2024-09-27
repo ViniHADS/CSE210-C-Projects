@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class PromptGenerator
 {
-    // Lista de prompts
+    // List of prompts
     public List<string> _prompts = new List<string>
     {
         "Who was the most interesting person I interacted with today?",
@@ -15,7 +15,7 @@ class PromptGenerator
         "If you are in a relationship with someone tell your feelings about her(him)."
     };
 
-    // Retorna um prompt aleatório
+    // Return a random prompt
     public string GetRandomPrompt()
     {
         Random random = new Random();
