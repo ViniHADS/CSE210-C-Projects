@@ -4,10 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Inicializa a biblioteca de escrituras
+        // Initializes the script library
         ScriptureLibrary library = new ScriptureLibrary();
 
-        // Adiciona escrituras à biblioteca
+        // Add scriptures to the library
         library.AddScripture(new Scripture("Proverbs", 3, 5, 6,
             "Trust in the Lord with all your heart and lean not on your own understanding; " +
             "in all your ways submit to him, and he will make your paths straight."));
@@ -21,33 +21,33 @@ class Program
             "Behold, I am a disciple of Jesus Christ, the Son of God. I have been called of him to declare, " +
             "his word among his people, that they might have everlasting life."));
 
-        // Obtém uma escritura aleatória da biblioteca
+        // Get a random deed from the library
         Scripture scripture = library.GetRandomScripture();
 
         while (true)
         {
-            // Limpa o console e exibe a escritura atual
+            // Clears the console and displays the current deed
             Console.Clear();
             Console.WriteLine(scripture.GetRenderedScripture());
 
-            // Verifica se todas as palavras estão ocultas, se sim, encerra o programa
+            // Checks if all words are hidden, if so, closes the program
             if (scripture.AllWordsHidden())
             {
-                Console.WriteLine("\nTodas as palavras foram ocultas! Programa encerrado.");
+                Console.WriteLine("\nAll the words have been hidden! Program closed.");
                 break;
             }
 
-            // Aguarda entrada do usuário
-            Console.WriteLine("\nPressione 'Enter' para ocultar palavras ou digite 'quit' para sair.");
+            // Waiting for user input
+            Console.WriteLine("\nPress 'Enter' to hide words or type 'quit' to exit.");
             string input = Console.ReadLine();
 
-            // Se o usuário digitar 'quit', encerra o programa
+            // If the user types 'quit', it terminates the program
             if (input.ToLower() == "quit")
             {
                 break;
             }
 
-            // Se o usuário pressionar 'Enter' sem digitar 'quit', oculta palavras
+            // If the user presses 'Enter' without typing 'quit', it hides words
             scripture.HideRandomWords();
         }
     }

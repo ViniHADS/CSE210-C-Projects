@@ -6,13 +6,13 @@ class Scripture
     private Reference _reference;
     private List<Word> _words;
 
-    // Construtor que aceita um único versículo
+    // Constructor that accepts a single verse
     public Scripture(string book, int chapter, int verse, string text)
     {
         _reference = new Reference(book, chapter, verse);
         _words = new List<Word>();
 
-        // Divide o texto em palavras e as adiciona à lista _words
+        // Splits the text into words and adds them to the _words list
         string[] wordsArray = text.Split(' ');
         foreach (string wordText in wordsArray)
         {
@@ -20,13 +20,13 @@ class Scripture
         }
     }
 
-    // Construtor que aceita um intervalo de versículos
+    // Constructor that accepts a range of verses
     public Scripture(string book, int chapter, int startVerse, int endVerse, string text)
     {
         _reference = new Reference(book, chapter, startVerse, endVerse);
         _words = new List<Word>();
 
-        // Divide o texto em palavras e as adiciona à lista _words
+        // Splits the text into words and adds them to the _words list
         string[] wordsArray = text.Split(' ');
         foreach (string wordText in wordsArray)
         {
@@ -39,7 +39,7 @@ class Scripture
         Random random = new Random();
         List<Word> visibleWords = new List<Word>();
 
-        // Cria uma lista de palavras que ainda estão visíveis
+        // Creates a list of words that are still visible
         foreach (Word word in _words)
         {
             if (!word.IsHidden())
@@ -48,7 +48,7 @@ class Scripture
             }
         }
 
-        // Se existirem palavras visíveis, esconde uma aleatória
+        // If there are visible words, hide a random one
         if (visibleWords.Count > 0)
         {
             int index = random.Next(visibleWords.Count);
