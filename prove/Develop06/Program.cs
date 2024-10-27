@@ -1,45 +1,54 @@
 using System;
+
 namespace EternalQuest
 {
-public class Program
-{
-    public static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Welcome to the Goal Tracker!");
-
-        while (true)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1) Create Goals");
-            Console.WriteLine("2) Delete Goals");
-            Console.WriteLine("3) Save Goals");
-            Console.WriteLine("4) Load Goals");
-            Console.WriteLine("5) Exit Game");
+            Console.WriteLine("Welcome to the Goal Tracker!");
 
-            string choice = Console.ReadLine();
-
-            switch (choice)
+            while (true)
             {
-                case "1":
-                    CreateGoals();
-                    break;
-                case "2":
-                    DeleteGoals();
-                    break;
-                case "3":
-                    SaveGoals();
-                    break;
-                case "4":
-                    LoadGoals();
-                    break;
-                case "5":
-                    return;
-                default:
-                    Console.WriteLine("Invalid option. Please try again.");
-                    break;
+                Console.WriteLine("Menu:");
+                Console.WriteLine("1) Create Goals");
+                Console.WriteLine("2) Delete Goals");
+                Console.WriteLine("3) Save Goals");
+                Console.WriteLine("4) Load Goals");
+                Console.WriteLine("5) Show Checklist");  // New option
+                Console.WriteLine("6) View Points");     // New option
+                Console.WriteLine("7) Exit Game");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        CreateGoals();
+                        break;
+                    case "2":
+                        DeleteGoals();
+                        break;
+                    case "3":
+                        SaveGoals();
+                        break;
+                    case "4":
+                        LoadGoals();
+                        break;
+                    case "5":
+                        ChecklistGoals.ShowChecklist();  // Calls ChecklistGoals
+                        break;
+                    case "6":
+                        Console.WriteLine($"Current Total Points: {Rewards.Points}");  // Shows points from Rewards
+                        break;
+                    case "7":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
             }
         }
-    }
 
     private static void CreateGoals()
     {
