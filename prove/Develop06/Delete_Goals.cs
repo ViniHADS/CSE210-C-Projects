@@ -1,6 +1,8 @@
 using System;
 
-class DeleteGoals
+namespace EternalQuest
+{
+    class DeleteGoals
 {
     public static void Delete()
     {
@@ -33,4 +35,6 @@ class DeleteGoals
             Console.WriteLine("Invalid option. Returning to Main Menu...");
         }
     }
+}
+
 }

@@ -1,3 +1,5 @@
+namespace EternalQuest
+{
 public static class Rewards
 {
     public static int Points { get; private set; } = 0;
@@ -25,4 +27,6 @@ public static class Rewards
 
         Console.WriteLine($"Total Points: {Points}");
     }
+}
+
 }

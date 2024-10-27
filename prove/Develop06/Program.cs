@@ -1,6 +1,6 @@
-
 using System;
-
+namespace EternalQuest
+{
 public class Program
 {
     public static void Main(string[] args)
@@ -112,4 +112,6 @@ public class Program
         string fileName = Console.ReadLine();
         SaveLoad.Load(fileName);  // Passa o filename como argumento
     }
+}
+
 }

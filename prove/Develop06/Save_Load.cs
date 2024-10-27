@@ -3,6 +3,9 @@ using System.IO;
 using System.Text.Json;
 using System;
 
+namespace EternalQuest
+{
+
 public static class SaveLoad
 {
     public static void Save(string filename)
@@ -32,4 +35,5 @@ public static class SaveLoad
             Console.WriteLine("File not found.");
         }
     }
+}
 }

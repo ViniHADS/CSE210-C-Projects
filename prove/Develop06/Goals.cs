@@ -1,4 +1,6 @@
-public class Goal
+namespace EternalQuest
+{
+    public class Goal
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -10,4 +12,6 @@ public class Goal
         Description = description;
         IsCompleted = false; // Inicialmente não concluído
     }
+}
+
 }

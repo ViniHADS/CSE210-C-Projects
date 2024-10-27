@@ -1,5 +1,6 @@
 using System;
-
+namespace EternalQuest
+{
 public class ChecklistGoals
 {
     public static void ShowChecklist()
@@ -26,4 +27,6 @@ public class ChecklistGoals
             Console.WriteLine("Invalid input. Please try again.");
         }
     }
+}
+
 }
