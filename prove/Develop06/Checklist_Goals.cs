@@ -13,9 +13,9 @@ public class ChecklistGoals
             var goal = GoalManager.Goals[goalIndex - 1];
             goal.IsCompleted = true;
 
-            // Verifica se é uma goal eterna ou simples
+            
             bool isEternalGoal = goal.Description.Contains("eternal", StringComparison.OrdinalIgnoreCase);
-            Rewards.RewardUser(true, isEternalGoal); // Chama Rewards
+            Rewards.RewardUser(true, isEternalGoal); 
             Console.WriteLine($"Goal '{goal.Name}' marked as completed!");
         }
         else if (goalIndex == 0)

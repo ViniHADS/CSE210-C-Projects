@@ -14,7 +14,7 @@ public static class SaveLoad
         Directory.CreateDirectory(directoryPath);
         string filePath = Path.Combine(directoryPath, filename + ".json");
 
-        string json = JsonSerializer.Serialize(GoalManager.Goals); // Salva o GoalManager.Goals
+        string json = JsonSerializer.Serialize(GoalManager.Goals); 
         File.WriteAllText(filePath, json);
         Console.WriteLine("Goals saved successfully.");
     }

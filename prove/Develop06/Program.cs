@@ -6,7 +6,7 @@ namespace EternalQuest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Goal Tracker!");
+            Console.WriteLine("Welcome to the game Eternal Quest, do your best to receive ETERNALS rewards!");
 
             while (true)
             {
@@ -15,8 +15,8 @@ namespace EternalQuest
                 Console.WriteLine("2) Delete Goals");
                 Console.WriteLine("3) Save Goals");
                 Console.WriteLine("4) Load Goals");
-                Console.WriteLine("5) Show Checklist");  // New option
-                Console.WriteLine("6) View Points");     // New option
+                Console.WriteLine("5) Show Checklist"); 
+                Console.WriteLine("6) View Points");    
                 Console.WriteLine("7) Exit Game");
 
                 string choice = Console.ReadLine();
@@ -36,10 +36,10 @@ namespace EternalQuest
                         LoadGoals();
                         break;
                     case "5":
-                        ChecklistGoals.ShowChecklist();  // Calls ChecklistGoals
+                        ChecklistGoals.ShowChecklist();  
                         break;
                     case "6":
-                        Console.WriteLine($"Current Total Points: {Rewards.Points}");  // Shows points from Rewards
+                        Console.WriteLine($"Current Total Points: {Rewards.Points}");  
                         break;
                     case "7":
                         return;
@@ -95,7 +95,7 @@ namespace EternalQuest
             }
             else if (goalIndex == 0)
             {
-                return; // Volta ao menu principal
+                return; 
             }
             else
             {
@@ -112,14 +112,14 @@ namespace EternalQuest
     {
         Console.WriteLine("Enter filename to save:");
         string fileName = Console.ReadLine();
-        SaveLoad.Save(fileName);  // Passa o filename como argumento
+        SaveLoad.Save(fileName);  
     }
 
     private static void LoadGoals()
     {
         Console.WriteLine("Enter filename to load:");
         string fileName = Console.ReadLine();
-        SaveLoad.Load(fileName);  // Passa o filename como argumento
+        SaveLoad.Load(fileName);  
     }
 }
 

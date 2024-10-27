@@ -10,7 +10,7 @@ namespace EternalQuest
     {
         Name = name;
         Description = description;
-        IsCompleted = false; // Inicialmente não concluído
+        IsCompleted = false; 
     }
 }
 
